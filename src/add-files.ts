@@ -36,10 +36,10 @@ export class AddFiles {
         value: 'folder'
       }).then(
         (fileName) => {
-          if (fileName) {
-            deferred.resolve(path.join(newFolderPath, fileName));
+          if (!fileName || /[~`!#$%\^&*+=\[\]\\';,/{}|\\":<>\?\s]/g.test(fileName)) {
+            deferred.reject('That\'s not a valid name! (no whitespaces or special characters)');
           } else {
-            deferred.reject('That\'s not a valid name!');
+            deferred.resolve(path.join(newFolderPath, fileName));
           }
         },
         (error) => console.error(error)
