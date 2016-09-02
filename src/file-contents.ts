@@ -39,4 +39,36 @@ export class FileContents {
         return cssContent;
     }
 
+    public specContent(inputName: string): string {
+        var inputUpperCase: string;       
+        inputUpperCase = inputName.charAt(0).toUpperCase() + inputName.slice(1);
+        inputUpperCase = this.camelCase(inputUpperCase);
+        
+        var specContent: string = "import { TestBed, inject } from '@angular/core/testing';\n\n" +
+            "import { " + inputUpperCase + "Component } from './" + inputName + ".component';\n" +
+            "\n" +
+            "describe('a "+ inputName +" component', () => {\n" +
+                "\tlet component: " + inputUpperCase + "Component;\n" +
+                "\n" +
+                "\t// register all needed dependencies\n" +
+                "\tbeforeEach(() => {\n" +
+                    "\t\tTestBed.configureTestingModule({\n" +
+                        "\t\t\tproviders: [\n" +
+                            "\t\t\t\t" + inputUpperCase + "Component\n" +
+                        "\t\t\t]\n" +
+                    "\t\t});\n" +
+               "\t});\n" +
+                "\n" +
+                "\t// instantiation through framework injection\n" +
+                "\tbeforeEach(inject([" + inputUpperCase + "Component], (" + inputUpperCase + "Component) => {\n" +
+                    "\t\tcomponent = " + inputUpperCase + "Component;\n" +
+                "\t}));\n" +
+                "\n" +
+                "\tit('should have an instance', () => {\n" +
+                    "\t\texpect(component).toBeDefined();\n" +
+                "\t});\n" +
+            "});";
+        return specContent;
+    }
+
 }

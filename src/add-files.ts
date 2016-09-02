@@ -83,6 +83,10 @@ export class AddFiles {
       {
         name: path.join(folderName, `${inputName}.component.css`),
         content: fc.cssContent(inputName)
+      },
+      {
+        name: path.join(folderName, `${inputName}.component.spec.ts`),
+        content: fc.specContent(inputName)
       }
     ];
 

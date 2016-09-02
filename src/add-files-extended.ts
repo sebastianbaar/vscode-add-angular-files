@@ -47,6 +47,10 @@ export class AddFilesExtended extends AddFiles {
         content: fc.cssContent(inputName)
       },
       {
+        name: path.join(folderName, `${inputName}.component.spec.ts`),
+        content: fc.specContent(inputName)
+      },
+      {
         name: path.join(folderName, 'shared', `${inputName}.service.ts`),
         content: fc.serviceContent(inputName)
       },

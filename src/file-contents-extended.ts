@@ -40,7 +40,7 @@ export class FileContentsExtended {
         inputUpperCase = inputName.charAt(0).toUpperCase() + inputName.slice(1);
         inputUpperCase = this.camelCase(inputUpperCase);
         var serviceContent: string = "import { Injectable } from '@angular/core';\n" +
-            "import { Http, Headers, RequestOptions } from '@angular/http';\n" +
+            "import { Http } from '@angular/http';\n" +
             "import { Observable } from 'rxjs/Observable';\n" +
             "import 'rxjs/add/operator/map';\n" +
             "\n" +
@@ -81,6 +81,52 @@ export class FileContentsExtended {
         var inputUpperCase: string = inputName.charAt(0).toUpperCase() + inputName.slice(1);
         var cssContent: string = `.${inputName} {\n\n}`;
         return cssContent;
+    }
+
+    public specContent(inputName: string): string {
+        var inputUpperCase: string;       
+        inputUpperCase = inputName.charAt(0).toUpperCase() + inputName.slice(1);
+        inputUpperCase = this.camelCase(inputUpperCase);
+        
+        var specContent: string = "import { TestBed, inject } from '@angular/core/testing';\n" +
+            "import { HttpModule } from '@angular/http';\n" +
+            "import { Observable } from 'rxjs/Observable';\n" +
+            "import 'rxjs/Rx';\n\n" +
+            "import { " + inputUpperCase + "Component } from './" + inputName + ".component';\n" +
+            "import { " + inputUpperCase + "Service } from './shared/" + inputName + ".service';\n" +
+            "import { " + inputUpperCase + " } from './shared/" + inputName + ".model';\n" +
+            "\n" +
+            "describe('a "+ inputName +" component', () => {\n" +
+                "\tlet component: " + inputUpperCase + "Component;\n" +
+                "\n" +
+                "\t// register all needed dependencies\n" +
+                "\tbeforeEach(() => {\n" +
+                    "\t\tTestBed.configureTestingModule({\n" +
+                        "\t\t\timports: [HttpModule],\n" +
+                        "\t\t\tproviders: [\n" +
+                            "\t\t\t\t{ provide: " + inputUpperCase + "Service, useClass: Mock" + inputUpperCase + "Service },\n" +
+                            "\t\t\t\t" + inputUpperCase + "Component\n" +
+                        "\t\t\t]\n" +
+                    "\t\t});\n" +
+               "\t});\n" +
+                "\n" +
+                "\t// instantiation through framework injection\n" +
+                "\tbeforeEach(inject([" + inputUpperCase + "Component], (" + inputUpperCase + "Component) => {\n" +
+                    "\t\tcomponent = " + inputUpperCase + "Component;\n" +
+                "\t}));\n" +
+                "\n" +
+                "\tit('should have an instance', () => {\n" +
+                    "\t\texpect(component).toBeDefined();\n" +
+                "\t});\n" +
+            "});\n" +
+            "\n" +
+            "// Mock of the original " + inputName + " service\n" +
+            "class Mock" + inputUpperCase + "Service extends " + inputUpperCase + "Service {\n" +
+                "\tgetList(): Observable<any> {\n" +
+                    "\t\treturn Observable.from([ { id: 1, name: 'One'}, { id: 2, name: 'Two'} ]);\n" +
+                "\t}\n" +
+            "}\n";
+        return specContent;
     }
 
 }
