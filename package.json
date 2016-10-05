@@ -2,7 +2,7 @@
     "name": "vscode-add-angular2-files",
     "displayName": "Add Angular2 Files",
     "description": "Add Angular2 files including ng2 snippets to your Visual Studio Code project",
-    "version": "0.2.1",
+    "version": "1.0.0",
     "icon": "images/icon.png",
     "publisher": "sebastianbaar",
     "author": {

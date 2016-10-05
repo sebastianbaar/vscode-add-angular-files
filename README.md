@@ -8,6 +8,9 @@ This extension allows you to add **Angular2 typescript files including snippets*
 
 ## Changelog
 
+### 1.0.0
+**Now Updated for Angular 2.0.0 release** 
+
 ### 0.2.1
 * **icon** add an icon 
 
