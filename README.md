@@ -8,7 +8,7 @@ This extension allows you to add **Angular2 typescript files including snippets*
 
 ## Changelog
 
-### 1.1.0
+### 1.1.2
 * **custom stylesheet language** define the stylesheet language in the user settings `"addNg2.stylesheet": "VALUE"`, where `VALUE` is "css" (default), "sass", or "less"
 
 ### 1.0.0
@@ -32,7 +32,7 @@ This command adds the following files to your new folder (let's assume you typed
 ```
 home/home.component.ts
 home/home.component.html
-home/home.component.css
+home/home.component.css | .less | .scss
 home/home.component.spec.ts
 ```
 
@@ -44,7 +44,7 @@ This command adds the following extended files to your new folder (let's assume 
 ```
 home/home.component.ts
 home/home.component.html
-home/home.component.css
+home/home.component.css | .less | .scss
 home/home.component.spec.ts
 home/shared/home.service.ts
 home/shared/home.ts
