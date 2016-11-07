@@ -8,6 +8,9 @@ This extension allows you to add **Angular2 typescript files including snippets*
 
 ## Changelog
 
+### 1.1.0
+* **custom stylesheet language** define the stylesheet language in the user settings as "css" (default), "sass", or "less"
+
 ### 1.0.0
 **Now Updated for Angular 2.0.0 release** 
 
@@ -50,6 +53,14 @@ home/shared/home.ts
 ![alt text](https://cloud.githubusercontent.com/assets/7135276/16797375/861bd246-48e7-11e6-8cc8-2fc688197388.gif "Add Angular2 Files (Extended)")
 
 **The naming of the files as well as the (boilerplate) snippets are based on the [official Angular2 Style Guide](https://angular.io/docs/ts/latest/guide/style-guide.html)**
+
+### Customize stylesheet language
+
+You can choose between your preferred stylesheet language CSS, SASS or LESS. 
+
+1. Go to user settings (File > Preferences > user settings)
+2. Add the following key-value pair:
+    `"addNg2.stylesheet": "VALUE"`, where VALUE is an ENUM of "css" (default), "sass", or "less"
 
 ## Installation
 

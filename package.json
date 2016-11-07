@@ -1,69 +1,86 @@
 {
-    "name": "vscode-add-angular2-files",
-    "displayName": "Add Angular2 Files",
-    "description": "Add Angular2 files including ng2 snippets to your Visual Studio Code project",
-    "version": "1.0.0",
-    "icon": "images/icon.png",
-    "publisher": "sebastianbaar",
-    "author": {
-        "name": "Sebastian Baar"
-    },
-    "engines": {
-        "vscode": "^1.4.0"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/sebastianbaar/vscode-add-angular2-files"
-    },
-    "bugs": {
-        "url": "https://github.com/sebastianbaar/vscode-add-angular2-files/issues"
-    },
-    "categories": [
-        "Other",
-        "Languages",
-        "Snippets"
+  "name": "vscode-add-angular2-files",
+  "displayName": "Add Angular2 Files",
+  "description": "Add Angular2 files including ng2 snippets to your Visual Studio Code project",
+  "version": "1.1.0",
+  "icon": "images/icon.png",
+  "publisher": "sebastianbaar",
+  "author": {
+    "name": "Sebastian Baar"
+  },
+  "engines": {
+    "vscode": "^1.5.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sebastianbaar/vscode-add-angular2-files"
+  },
+  "bugs": {
+    "url": "https://github.com/sebastianbaar/vscode-add-angular2-files/issues"
+  },
+  "categories": [
+    "Other",
+    "Languages",
+    "Snippets"
+  ],
+  "scripts": {
+    "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+    "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install"
+  },
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./out/src/extension",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.addAngular2Files",
+        "title": "Add Angular2 Files"
+      },
+      {
+        "command": "extension.addAngular2FilesExtended",
+        "title": "Add Angular2 Files (Extended)"
+      }
     ],
-    "scripts": {
-        "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
-        "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
-        "postinstall": "node ./node_modules/vscode/bin/install"
-    },
-    "activationEvents": [
-        "*"
-    ],
-    "main": "./out/src/extension",
-    "contributes": {
-        "commands": [
-            {
-                "command": "extension.addAngular2Files",
-                "title": "Add Angular2 Files"
-            },
-            {
-                "command": "extension.addAngular2FilesExtended",
-                "title": "Add Angular2 Files (Extended)"
-            }
-        ],
-        "menus": {
-            "explorer/context": [
-                {
-                    "when": "",
-                    "command": "extension.addAngular2Files",
-                    "group": "Add Files"
-                },
-                {
-                    "when": "",
-                    "command": "extension.addAngular2FilesExtended",
-                    "group": "Add Files"
-                }
-            ]
+    "menus": {
+      "explorer/context": [
+        {
+          "when": "",
+          "command": "extension.addAngular2Files",
+          "group": "Add Files"
+        },
+        {
+          "when": "",
+          "command": "extension.addAngular2FilesExtended",
+          "group": "Add Files"
         }
+      ]
     },
-    "devDependencies": {
-        "typescript": "^1.8.5",
-        "rimraf": "^2.4.4",
-        "vscode": "^0.11.0"
-    },
-    "dependencies": {
-        "q": "^1.4.1"
+    "configuration": {
+      "type": "object",
+      "title": "Add Angular2 Files configuration",
+      "properties": {
+        "addNg2.stylesheet": {
+          "type": "string",
+          "default": "css",
+          "description": "Specifies stylesheet language ('css', 'sass', 'less').",
+          "enum": [
+            "css",
+            "sass",
+            "less"
+          ]
+        }
+      }
     }
+  },
+  "devDependencies": {
+    "rimraf": "^2.5.4",
+    "typescript": "1.8.10",
+    "vscode": "^0.11.17"
+  },
+  "dependencies": {
+    "path": "^0.12.7",
+    "q": "^1.4.1"
+  }
 }
