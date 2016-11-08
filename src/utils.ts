@@ -2,7 +2,7 @@ import { workspace } from 'vscode';
 
 export class Utils {
 
-    public static getStylesheet(): string {
+    public static getStylesheetConfig(): string {
         var addNg2ConfigStylesheet: string = workspace.getConfiguration('addNg2')['stylesheet'];
         
         var stylesheetFileExtension: string = 'css';
@@ -20,5 +20,9 @@ export class Utils {
         }
 
         return stylesheetFileExtension;
+    }
+
+    public static getAddTestFileConfig(): boolean {
+        return workspace.getConfiguration('addNg2')['addTestFile'];
     }
 }

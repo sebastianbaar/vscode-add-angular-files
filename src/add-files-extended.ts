@@ -32,7 +32,8 @@ export class AddFilesExtended extends AddFiles {
     var inputName: string = path.parse(folderName).name;
     const fc: FileContentsExtended = new FileContentsExtended();
     const afe: AddFilesExtended = new AddFilesExtended();
-    let stylesheetFileExtension = Utils.getStylesheet(); 
+    let stylesheetFileExtension = Utils.getStylesheetConfig(); 
+    let addTestFile: boolean = Utils.getAddTestFileConfig();
 
     // create an IFiles array including file names and contents
     var files: IFiles[] = [
@@ -47,11 +48,7 @@ export class AddFilesExtended extends AddFiles {
       {
         name: path.join(folderName, `${inputName}.component.${stylesheetFileExtension}`),
         content: fc.cssContent(inputName)
-      },
-      {
-        name: path.join(folderName, `${inputName}.component.spec.ts`),
-        content: fc.specContent(inputName)
-      },
+      },      
       {
         name: path.join(folderName, 'shared', `${inputName}.service.ts`),
         content: fc.serviceContent(inputName)
@@ -61,6 +58,15 @@ export class AddFilesExtended extends AddFiles {
         content: fc.modelContent(inputName)
       }
     ];
+
+    if (addTestFile) {
+      files.push(
+        {
+          name: path.join(folderName, `${inputName}.component.spec.ts`),
+          content: fc.specContent(inputName)
+        }
+      );
+    }
 
     // write files
     afe.writeFiles(files).then((errors) => {

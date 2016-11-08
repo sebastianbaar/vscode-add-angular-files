@@ -8,8 +8,11 @@ This extension allows you to add **Angular2 typescript files including snippets*
 
 ## Changelog
 
+### 1.1.3
+* **user settings: include test file** include test file (.spec) in generation of files in the user settings `"addNg2.addTestFile": VALUE`, where `VALUE` is true (default) or false
+
 ### 1.1.2
-* **custom stylesheet language** define the stylesheet language in the user settings `"addNg2.stylesheet": "VALUE"`, where `VALUE` is "css" (default), "sass", or "less"
+* **user settings: custom stylesheet language** define the stylesheet language in the user settings `"addNg2.stylesheet": "VALUE"`, where `VALUE` is "css" (default), "sass", or "less"
 
 ### 1.0.0
 **Now Updated for Angular 2.0.0 release** 
