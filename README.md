@@ -1,32 +1,10 @@
 ![](images/icon.png)
 
-# Angular Add Files for VS Code
+# Add Angular Files for VS Code
 
 This extension allows you to add **Angular typescript files including snippets** to your VS Code project.
 
 > Inspired by [Dominik Kundel](https://github.com/dkundel)'s [Advanced New File - Visual Studio Code Extension](https://github.com/dkundel/vscode-new-file) and [John Papa](https://github.com/johnpapa)'s [Angular TypeScript Snippets for VS Code](https://github.com/johnpapa/vscode-angular-snippets).
-
-## Changelog
-
-### 2.0.0
-* **Now Updated for Angular 4 release**
-
-### 1.1.3
-* **user settings: include test file** include test file (.spec) in generation of files in the user settings `"addNg2.addTestFile": VALUE`, where `VALUE` is true (default) or false
-
-### 1.1.2
-* **user settings: custom stylesheet language** define the stylesheet language in the user settings `"addNg2.stylesheet": "VALUE"`, where `VALUE` is "css" (default), "sass", or "less"
-
-### 1.0.0
-**Now Updated for Angular 2.0.0 release** 
-
-### 0.2.1
-* **icon** add an icon 
-
-### 0.2.0
-
-* **@angular** update to Angular2 rc.6
-* **tests** add tests (.spec-files)
 
 ## Features
 

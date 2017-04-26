@@ -1,8 +1,8 @@
 {
-<<<<<<< HEAD"name": "vscode-add-angular-files",
+  "name": "vscode-add-angular-files",
   "displayName": "Add Angular Files",
   "description": "Add Angular files including snippets to your Visual Studio Code project",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "icon": "images/icon.png",
   "publisher": "sebastianbaar",
   "license": "SEE LICENSE IN LICENSE.md",
@@ -64,29 +64,29 @@
           "group": "Add Files"
         }
       ]
-    }
-  },
-  "configuration": {
-    "type": "object",
-    "title": "Add Angular2 Files configuration",
-    "properties": {
-      "addAngular.stylesheet": {
-        "type": "string",
-        "default": "css",
-        "description": "Specifies stylesheet language ('css', 'sass', 'less').",
-        "enum": [
-          "css",
-          "sass",
-          "less"
-        ]
-      },
-      "addAngular.addTestFile": {
-        "type": "boolean",
-        "default": true,
-        "description": "Create a test file (.spec)"
+    },
+    "configuration": {
+      "type": "object",
+      "title": "Add Angular Files configuration",
+      "properties": {
+        "addAngular.stylesheet": {
+          "type": "string",
+          "default": "css",
+          "description": "Specifies stylesheet language ('css', 'sass', 'less').",
+          "enum": [
+            "css",
+            "sass",
+            "less"
+          ]
+        },
+        "addAngular.addTestFile": {
+          "type": "boolean",
+          "default": true,
+          "description": "Create a test file (.spec)"
+        }
       }
     }
-  }
+  },
   "devDependencies": {
     "typescript": "^2.0.3",
     "vscode": "^1.1.0",
@@ -94,11 +94,11 @@
     "mocha": "^2.3.3",
     "@types/node": "^6.0.40",
     "@types/mocha": "^2.2.32",
-    "@types/q": "^1.2.0",
+    "@types/q": "^1.0.0",
     "@types/rimraf": "0.0.28"
   },
   "dependencies": {
     "q": "^1.4.1",
-    "path": "^0.12.7",
+    "path": "^0.12.7"
   }
 }
