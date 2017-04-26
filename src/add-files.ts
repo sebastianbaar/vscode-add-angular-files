@@ -1,5 +1,6 @@
 import { window, workspace, TextEditor } from 'vscode';
 import { FileContents } from './file-contents';
+import { Utils } from './utils'
 import { IFiles } from './file';
 import * as fs from 'fs';
 import * as path from 'path';
@@ -68,6 +69,8 @@ export class AddFiles {
     var inputName: string = path.parse(folderName).name;    
     const fc: FileContents = new FileContents();
     const af: AddFiles = new AddFiles();
+    let stylesheetFileExtension: string = Utils.getStylesheetConfig();
+    let addTestFile: boolean = Utils.getAddTestFileConfig();
 
     // create an IFiles array including file names and contents
     var files: IFiles[] = [
@@ -80,14 +83,19 @@ export class AddFiles {
         content: fc.templateContent(inputName)
       },
       {
-        name: path.join(folderName, `${inputName}.component.css`),
+        name: path.join(folderName, `${inputName}.component.${stylesheetFileExtension}`),
         content: fc.cssContent(inputName)
-      },
-      {
-        name: path.join(folderName, `${inputName}.component.spec.ts`),
-        content: fc.specContent(inputName)
-      }
+      }      
     ];
+
+    if (addTestFile) {
+      files.push(
+        {
+          name: path.join(folderName, `${inputName}.component.spec.ts`),
+          content: fc.specContent(inputName)
+        }
+      );
+    }
 
     // write files
     af.writeFiles(files).then((errors) => {

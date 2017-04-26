@@ -8,8 +8,17 @@ This extension allows you to add **Angular typescript files including snippets**
 
 ## Changelog
 
-### 1.2.0
-* **Now Updated for Angular 4.0.0 release**
+### 2.0.0
+* **Now Updated for Angular 4 release**
+
+### 1.1.3
+* **user settings: include test file** include test file (.spec) in generation of files in the user settings `"addNg2.addTestFile": VALUE`, where `VALUE` is true (default) or false
+
+### 1.1.2
+* **user settings: custom stylesheet language** define the stylesheet language in the user settings `"addNg2.stylesheet": "VALUE"`, where `VALUE` is "css" (default), "sass", or "less"
+
+### 1.0.0
+**Now Updated for Angular 2.0.0 release** 
 
 ### 0.2.1
 * **icon** add an icon 
@@ -29,7 +38,7 @@ This command adds the following files to your new folder (let's assume you typed
 ```
 home/home.component.ts
 home/home.component.html
-home/home.component.css
+home/home.component.css | .less | .scss
 home/home.component.spec.ts
 ```
 
@@ -41,7 +50,7 @@ This command adds the following extended files to your new folder (let's assume 
 ```
 home/home.component.ts
 home/home.component.html
-home/home.component.css
+home/home.component.css | .less | .scss
 home/home.component.spec.ts
 home/shared/home.service.ts
 home/shared/home.ts
@@ -50,6 +59,14 @@ home/shared/home.ts
 ![alt text](https://cloud.githubusercontent.com/assets/7135276/16797375/861bd246-48e7-11e6-8cc8-2fc688197388.gif "Add Angular Files (Extended)")
 
 **The naming of the files as well as the (boilerplate) snippets are based on the [official Angular Style Guide](https://angular.io/docs/ts/latest/guide/style-guide.html)**
+
+### Customize stylesheet language
+
+You can choose between your preferred stylesheet language CSS, SASS or LESS. 
+
+1. Go to user settings (File > Preferences > user settings)
+2. Add the following key-value pair:
+    `"addNg2.stylesheet": "VALUE"`, where `VALUE` is an ENUM of "css" (default), "sass", or "less"
 
 ## Installation
 

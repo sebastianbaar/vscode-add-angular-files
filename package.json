@@ -1,5 +1,5 @@
 {
-  "name": "vscode-add-angular-files",
+<<<<<<< HEAD"name": "vscode-add-angular-files",
   "displayName": "Add Angular Files",
   "description": "Add Angular files including snippets to your Visual Studio Code project",
   "version": "1.2.0",
@@ -66,6 +66,27 @@
       ]
     }
   },
+  "configuration": {
+    "type": "object",
+    "title": "Add Angular2 Files configuration",
+    "properties": {
+      "addAngular.stylesheet": {
+        "type": "string",
+        "default": "css",
+        "description": "Specifies stylesheet language ('css', 'sass', 'less').",
+        "enum": [
+          "css",
+          "sass",
+          "less"
+        ]
+      },
+      "addAngular.addTestFile": {
+        "type": "boolean",
+        "default": true,
+        "description": "Create a test file (.spec)"
+      }
+    }
+  }
   "devDependencies": {
     "typescript": "^2.0.3",
     "vscode": "^1.1.0",
@@ -77,6 +98,7 @@
     "@types/rimraf": "0.0.28"
   },
   "dependencies": {
-    "q": "1.4.1"
+    "q": "^1.4.1",
+    "path": "^0.12.7",
   }
 }
