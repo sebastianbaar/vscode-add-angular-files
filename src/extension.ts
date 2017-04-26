@@ -5,7 +5,7 @@ import { AddFilesExtended } from './add-files-extended';
 export function activate(context: ExtensionContext) {
   console.log('Congratulations, your extension is now active!');
 
-  var addAngular2Files = commands.registerCommand('extension.addAngular2Files', (args) => {
+  var addAngularFiles = commands.registerCommand('extension.addAngularFiles', (args) => {
     const addFiles: AddFiles = new AddFiles();
     addFiles.showFileNameDialog(args)
       .then(addFiles.createFolder)
@@ -18,7 +18,7 @@ export function activate(context: ExtensionContext) {
       });
   });
 
-  var addAngular2FilesExtended = commands.registerCommand('extension.addAngular2FilesExtended', (args) => {
+  var addAngularFilesExtended = commands.registerCommand('extension.addAngularFilesExtended', (args) => {
     const addFilesExtended: AddFilesExtended = new AddFilesExtended();
     addFilesExtended.showFileNameDialog(args)
       .then(addFilesExtended.createFolder)
@@ -31,6 +31,6 @@ export function activate(context: ExtensionContext) {
       });
   });
 
-  context.subscriptions.push(addAngular2Files);
-  context.subscriptions.push(addAngular2FilesExtended);
+  context.subscriptions.push(addAngularFiles);
+  context.subscriptions.push(addAngularFilesExtended);
 }

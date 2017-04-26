@@ -1,69 +1,82 @@
 {
-    "name": "vscode-add-angular2-files",
-    "displayName": "Add Angular2 Files",
-    "description": "Add Angular2 files including ng2 snippets to your Visual Studio Code project",
-    "version": "0.2.1",
-    "icon": "images/icon.png",
-    "publisher": "sebastianbaar",
-    "author": {
-        "name": "Sebastian Baar"
-    },
-    "engines": {
-        "vscode": "^1.4.0"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/sebastianbaar/vscode-add-angular2-files"
-    },
-    "bugs": {
-        "url": "https://github.com/sebastianbaar/vscode-add-angular2-files/issues"
-    },
-    "categories": [
-        "Other",
-        "Languages",
-        "Snippets"
+  "name": "vscode-add-angular-files",
+  "displayName": "Add Angular Files",
+  "description": "Add Angular files including snippets to your Visual Studio Code project",
+  "version": "1.2.0",
+  "icon": "images/icon.png",
+  "publisher": "sebastianbaar",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "author": {
+    "name": "Sebastian Baar"
+  },
+  "keywords": [
+    "Angular",
+    "Angular 2",
+    "Angular 4",
+    "TypeScript",
+    "Add files"
+  ],
+  "engines": {
+    "vscode": "^1.5.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sebastianbaar/vscode-add-angular-files"
+  },
+  "bugs": {
+    "url": "https://github.com/sebastianbaar/vscode-add-angular-files/issues"
+  },
+  "categories": [
+    "Other",
+    "Languages",
+    "Snippets"
+  ],
+  "scripts": {
+    "vscode:prepublish": "tsc -p ./",
+    "compile": "tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install"
+  },
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./out/src/extension",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.addAngularFiles",
+        "title": "Add Angular Files"
+      },
+      {
+        "command": "extension.addAngularFilesExtended",
+        "title": "Add Angular Files (Extended)"
+      }
     ],
-    "scripts": {
-        "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
-        "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
-        "postinstall": "node ./node_modules/vscode/bin/install"
-    },
-    "activationEvents": [
-        "*"
-    ],
-    "main": "./out/src/extension",
-    "contributes": {
-        "commands": [
-            {
-                "command": "extension.addAngular2Files",
-                "title": "Add Angular2 Files"
-            },
-            {
-                "command": "extension.addAngular2FilesExtended",
-                "title": "Add Angular2 Files (Extended)"
-            }
-        ],
-        "menus": {
-            "explorer/context": [
-                {
-                    "when": "",
-                    "command": "extension.addAngular2Files",
-                    "group": "Add Files"
-                },
-                {
-                    "when": "",
-                    "command": "extension.addAngular2FilesExtended",
-                    "group": "Add Files"
-                }
-            ]
+    "menus": {
+      "explorer/context": [
+        {
+          "when": "",
+          "command": "extension.addAngularFiles",
+          "group": "Add Files"
+        },
+        {
+          "when": "",
+          "command": "extension.addAngularFilesExtended",
+          "group": "Add Files"
         }
-    },
-    "devDependencies": {
-        "typescript": "^1.8.5",
-        "rimraf": "^2.4.4",
-        "vscode": "^0.11.0"
-    },
-    "dependencies": {
-        "q": "^1.4.1"
+      ]
     }
+  },
+  "devDependencies": {
+    "typescript": "^2.0.3",
+    "vscode": "^1.1.0",
+    "rimraf": "2.6.1",
+    "mocha": "^2.3.3",
+    "@types/node": "^6.0.40",
+    "@types/mocha": "^2.2.32",
+    "@types/q": "^1.2.0",
+    "@types/rimraf": "0.0.28"
+  },
+  "dependencies": {
+    "q": "1.4.1"
+  }
 }

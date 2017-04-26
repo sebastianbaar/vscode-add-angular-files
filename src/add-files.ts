@@ -1,4 +1,3 @@
-/// <reference path="../typings/tsd.d.ts" />
 import { window, workspace, TextEditor } from 'vscode';
 import { FileContents } from './file-contents';
 import { IFiles } from './file';
@@ -9,7 +8,7 @@ import * as Q from 'q';
 export class AddFiles {
 
   // Show input prompt for folder name 
-  // The imput is also used to create the files with the respective name as defined in the Angular2 style guide [https://angular.io/docs/ts/latest/guide/style-guide.html] 
+  // The imput is also used to create the files with the respective name as defined in the Angular style guide [https://angular.io/docs/ts/latest/guide/style-guide.html] 
   public showFileNameDialog(args): Q.Promise<string> {
     const deferred: Q.Deferred<string> = Q.defer<string>();
 

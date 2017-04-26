@@ -44,6 +44,7 @@ suite("Extension Tests:", () => {
                 },
                 (err) => {
                     console.log(err);
+                    done();
                 });
         });
 
@@ -55,15 +56,22 @@ suite("Extension Tests:", () => {
                             assert.strictEqual(folderName, testPath);
                             assert.strictEqual(fs.existsSync(testPath), true);
                             fs.readdir(testPath, (err, files) => {
-                                assert.strictEqual(files.length, 3);
+                                assert.strictEqual(files.length, 4);
                                 checkIfTestFolderExistsAndDelete();
                                 done();
                             });
-                        });
+                        }).catch((err) => {
+                            console.log(err);
+                            done();
+                        });;
                 },
                 (err) => {
                     checkIfTestFolderExistsAndDelete();
                     console.log(err);
+                    done();
+                }).catch((err) => {
+                    console.log(err);
+                    done();
                 });
         });
     });
@@ -116,7 +124,7 @@ suite("Extension Tests:", () => {
                             assert.strictEqual(folderName, testPath);
                             assert.strictEqual(fs.existsSync(testPath), true);
                             fs.readdir(testPath, (err, files) => {
-                                assert.strictEqual(files.length, 4);
+                                assert.strictEqual(files.length, 5);
                                 fs.readdir(path.join(testPath, 'shared'), (err, files) => {
                                     assert.strictEqual(files.length, 2);
                                     checkIfTestFolderExistsAndDelete();

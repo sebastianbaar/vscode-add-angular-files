@@ -1,4 +1,3 @@
-/// <reference path="../typings/tsd.d.ts" />
 import { window, workspace, TextEditor } from 'vscode';
 import { FileContentsExtended } from './file-contents-extended';
 import { AddFiles } from './add-files';
