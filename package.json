@@ -1,5 +1,5 @@
 {
-  "name": "vscode-add-angular-files",
+  "name": "vscode-add-angular2-files",
   "displayName": "Add Angular Files",
   "description": "Add Angular files including snippets to your Visual Studio Code project",
   "version": "2.0.0",
