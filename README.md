@@ -44,7 +44,13 @@ You can choose between your preferred stylesheet language CSS, SASS or LESS.
 
 1. Go to user settings (File > Preferences > user settings)
 2. Add the following key-value pair:
-    `"addNg2.stylesheet": "VALUE"`, where `VALUE` is an ENUM of "css" (default), "sass", or "less"
+    `"addAngular.stylesheet": "VALUE"`, where `VALUE` is an ENUM of "css" (default), "sass", or "less"
+
+### Customize test (.spec) files
+
+1. Go to user settings (File > Preferences > user settings)
+2. Add the following key-value pair:
+    `"addAngular.addTestFile": VALUE`, where `VALUE` is true (default) or false
 
 ## Installation
 
